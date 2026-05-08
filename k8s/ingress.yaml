@@ -3,17 +3,11 @@ kind: Ingress
 metadata:
   name: mern-ingress
   annotations:
-    alb.ingress.kubernetes.io/scheme: internet-facing
-    alb.ingress.kubernetes.io/target-type: ip
-    alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS": 443}]'
-    # Replace these ARNs with your actual ACM certificate ARNs
-    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:ap-south-1:126432121921:certificate/352f7049-53b0-4d03-a027-cb37e3312ab2
-    alb.ingress.kubernetes.io/ssl-redirect: "443"
-    alb.ingress.kubernetes.io/backend-protocol: HTTP
+    nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
-  ingressClassName: alb
+  ingressClassName: nginx
   rules:
-  - host: cmcloud.online
+  - host: your-domain.com  # Replace with your domain or leave empty for IP access
     http:
       paths:
       - path: /
@@ -23,10 +17,7 @@ spec:
             name: frontend-service
             port:
               number: 80
-  - host: api.cmcloud.online
-    http:
-      paths:
-      - path: /
+      - path: /api
         pathType: Prefix
         backend:
           service:
