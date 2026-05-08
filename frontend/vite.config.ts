@@ -14,7 +14,7 @@ export default defineConfig({
     port: 3000,
     proxy: {
       '/api': {
-        target: 'http://localhost:5001',
+        target: 'http://afdc42264aaa04b4ea8fb3a4a1ebc5ee-1029822586.ap-south-1.elb.amazonaws.com',
         changeOrigin: true,
       },
     },
