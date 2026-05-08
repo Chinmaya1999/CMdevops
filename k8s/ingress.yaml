@@ -3,11 +3,17 @@ kind: Ingress
 metadata:
   name: mern-ingress
   annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/target-type: ip
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS": 443}]'
+    # Replace these ARNs with your actual ACM certificate ARNs
+    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:ap-south-1:126432121921:certificate/352f7049-53b0-4d03-a027-cb37e3312ab2
+    alb.ingress.kubernetes.io/ssl-redirect: "443"
+    alb.ingress.kubernetes.io/backend-protocol: HTTP
 spec:
-  ingressClassName: nginx
+  ingressClassName: alb
   rules:
-  - host: your-domain.com  # Replace with your domain or leave empty for IP access
+  - host: bharatsolarsolution.net
     http:
       paths:
       - path: /
@@ -17,7 +23,10 @@ spec:
             name: frontend-service
             port:
               number: 80
-      - path: /api
+  - host: api.bharatsolarsolution.net
+    http:
+      paths:
+      - path: /
         pathType: Prefix
         backend:
           service:
