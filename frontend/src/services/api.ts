@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 export const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || 'http://afdc42264aaa04b4ea8fb3a4a1ebc5ee-1029822586.ap-south-1.elb.amazonaws.com/api',
+  baseURL: import.meta.env.VITE_API_URL || 'http://ac02951c387a04f6da75d785949cbe80-2042215472.ap-south-1.elb.amazonaws.com/api',
   timeout: 10000,
   headers: {
     'Content-Type': 'application/json',
