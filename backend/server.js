@@ -21,7 +21,7 @@ app.use(helmet());
 app.use(cors({
   origin: process.env.NODE_ENV === 'production' 
     ? 'https://bharatsolarsolution.net' 
-    : ['http://localhost:3000', 'http://43.205.177.102'],
+    : ['http://localhost:3000','http://ac02951c387a04f6da75d785949cbe80-2042215472.ap-south-1.elb.amazonaws.com', 'http://43.205.177.102'],
   credentials: true
 }));
 
