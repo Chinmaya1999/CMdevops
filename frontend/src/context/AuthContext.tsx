@@ -6,8 +6,8 @@ interface User {
   username: string
   email: string
   role: string
-  profilePicture?: string
   lastLogin?: string
+  profilePicture?: string
 }
 
 interface AuthContextType {

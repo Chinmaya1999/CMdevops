@@ -8,7 +8,6 @@ import {
   Trash2,
   Eye,
   Search,
-  Filter,
   Calendar,
   Tag
 } from 'lucide-react'
@@ -107,7 +106,7 @@ const HistoryPage: React.FC = () => {
     }
   }
 
-  const getTypeIcon = (type: string) => {
+  const getTypeIcon = () => {
     return <FileCode className="w-5 h-5" />
   }
 
@@ -215,7 +214,7 @@ const HistoryPage: React.FC = () => {
             <div key={file._id} className="card p-6 hover:shadow-lg transition-shadow duration-200">
               <div className="flex items-start justify-between mb-4">
                 <div className="flex items-center">
-                  {getTypeIcon(file.type)}
+                  {getTypeIcon()}
                   <div className="ml-3">
                     <h3 className="font-medium text-secondary-900 dark:text-secondary-100">
                       {file.name}

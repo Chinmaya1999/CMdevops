@@ -20,8 +20,8 @@ const app = express();
 app.use(helmet());
 app.use(cors({
   origin: process.env.NODE_ENV === 'production' 
-    ? 'https://your-domain.com' 
-    : 'http://localhost:3000',
+    ? 'https://bharatsolarsolution.net' 
+    : ['http://localhost:3000', 'http://43.205.177.102'],
   credentials: true
 }));
 

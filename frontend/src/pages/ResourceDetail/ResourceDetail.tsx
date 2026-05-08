@@ -11,15 +11,11 @@ import {
   Award,
   DollarSign,
   Calendar,
-  BarChart3,
   Code,
   FileText,
-  Target,
-  CheckCircle,
   Github,
   Youtube,
-  Globe,
-  ArrowRight
+  Globe
 } from 'lucide-react'
 import { api } from '../../services/api'
 
