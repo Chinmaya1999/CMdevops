@@ -13,7 +13,7 @@ metadata:
 spec:
   ingressClassName: alb
   rules:
-  - host: bharatsolarsolution.net
+  - host: cmcloud.online
     http:
       paths:
       - path: /
@@ -23,7 +23,7 @@ spec:
             name: frontend-service
             port:
               number: 80
-  - host: api.bharatsolarsolution.net
+  - host: api.cmcloud.online
     http:
       paths:
       - path: /
