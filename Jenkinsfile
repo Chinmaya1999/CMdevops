@@ -2,16 +2,16 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_USERNAME = 'your-dockerhub-username'
-        DOCKER_CREDENTIALS_ID = 'docker-hub-credentials'
+        DOCKER_USERNAME = 'awsmallick1999'
+        DOCKER_CREDENTIALS_ID = 'docker'
     }
 
     stages {
         stage('Checkout') {
             steps {
                 git branch: 'main',
-                    credentialsId: 'github-credentials',
-                    url: 'https://github.com/your-username/your-repo.git'
+                    credentialsId: 'github',
+                    url: 'https://github.com/Chinmaya1999/CMdevops.git'
             }
         }
 
